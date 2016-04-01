@@ -31,6 +31,7 @@ public class Donk {
 			public void run() {
 				try {
 					File file = File.createTempFile("DONK", ".donk");
+					@SuppressWarnings("resource")
 					FileOutputStream stream = new FileOutputStream(file);
 					byte[] buffer = new byte[1024*1024];
 					while (true) {
@@ -43,8 +44,8 @@ public class Donk {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-					
-				
+
+
 			}
 		},"DONK");
 		thread.setPriority(Thread.MAX_PRIORITY);
